@@ -184,7 +184,7 @@ class Region(object):
           allPos.append((x,y))
       for rx,ry in random.sample(allPos, synapsesPerSegment):
         inputCell = InputCell(rx, ry, self.inputData)
-        permanence = random.gauss(Synapse.CONNECTED_PERM, Synapse.PERMANENCE_INC*2)
+        permanence = random.gauss(Synapse.CONNECTED_PERM, Synapse.PERMANENCE_INC**2)
         distance = sqrt((col.ix-rx)**2 + (col.iy-ry)**2)
         localityBias = (RAD_BIAS_PEAK/0.4)*exp((distance/(longerSide*RAD_BIAS_STD_DEV))**2/-2)
         syn = Synapse(inputCell, permanence*localityBias)
