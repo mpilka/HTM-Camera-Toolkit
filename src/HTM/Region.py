@@ -130,7 +130,7 @@ class Region(object):
     for cx in xrange(self.width):
       yCols = []
       for cy in xrange(self.height):
-        srcPos = (int(cx*self.xSpace), int(cy*self.ySpace))
+        srcPos = (int(round(cx*self.xSpace)), int(round(cy*self.ySpace)))
         col = Column(self, srcPos, (cx,cy))
         yCols.append(col)
         self.columns.append(col)
